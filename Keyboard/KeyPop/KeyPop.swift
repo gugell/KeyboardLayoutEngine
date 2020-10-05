@@ -36,12 +36,12 @@ public struct KeyPopStyle {
     textColor: UIColor? = nil,
     contentInset: CGSize? = nil,
     contentOffset: CGSize? = nil) {
-    self.backgroundColor = backgroundColor ?? UIColor.whiteColor()
+    self.backgroundColor = backgroundColor ?? .white
     self.shadow = shadow ?? nil
     self.widthMultiplier = widthMultiplier ?? 1.2
     self.heightMultiplier = heightMultiplier ?? 1.2
-    self.font = font ?? UIFont.systemFontOfSize(15)
-    self.textColor = textColor ?? UIColor.blackColor()
+    self.font = font ?? UIFont.systemFont(ofSize: 15)
+    self.textColor = textColor ?? UIColor.black
     self.contentInset = contentInset ?? CGSize(width: 5, height: 5)
     self.contentOffset = contentOffset ?? CGSize.zero
   }
@@ -59,20 +59,20 @@ public class KeyPop: UIView {
     super.init(frame: CGRect.zero)
     self.style = style
     self.keyboardButton = keyboardButton
-    userInteractionEnabled = false
+    isUserInteractionEnabled = false
 
     switch keyboardButton.type {
     case .Key(let text):
       let label = UILabel()
       label.text = text
       label.textColor = style.textColor
-      label.textAlignment = .Center
+      label.textAlignment = .center
       label.adjustsFontSizeToFitWidth = true
       label.minimumScaleFactor = 0.5
       if let textLabel = keyboardButton.textLabel {
-        label.font = textLabel.font.fontWithSize(textLabel.font.pointSize * style.widthMultiplier)
+        label.font = textLabel.font.withSize(textLabel.font.pointSize * style.widthMultiplier)
       } else {
-        label.font = style.font.fontWithSize(style.font.pointSize * style.widthMultiplier)
+        label.font = style.font.withSize(style.font.pointSize * style.widthMultiplier)
       }
       addSubview(label)
       contentView = label
@@ -80,19 +80,19 @@ public class KeyPop: UIView {
       let label = UILabel()
       label.text = text
       label.textColor = style.textColor
-      label.textAlignment = .Center
+      label.textAlignment = .center
       label.adjustsFontSizeToFitWidth = true
       label.minimumScaleFactor = 0.5
       if let textLabel = keyboardButton.textLabel {
-        label.font = textLabel.font.fontWithSize(textLabel.font.pointSize * style.widthMultiplier)
+        label.font = textLabel.font.withSize(textLabel.font.pointSize * style.widthMultiplier)
       } else {
-        label.font = style.font.fontWithSize(style.font.pointSize * style.widthMultiplier)
+        label.font = style.font.withSize(style.font.pointSize * style.widthMultiplier)
       }
       contentView = label
       addSubview(label)
     case .Image(let image):
       let imageView = UIImageView()
-      imageView.contentMode = .ScaleAspectFit
+      imageView.contentMode = .scaleAspectFit
       imageView.image = image
       contentView = imageView
       addSubview(imageView)

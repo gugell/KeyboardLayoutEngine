@@ -22,7 +22,7 @@
 		B2FBDCE11CDD2224008D6100 /* KeyboardLayoutEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDCE01CDD2224008D6100 /* KeyboardLayoutEngineTests.swift */; };
 		B2FBDCEC1CDD2224008D6100 /* KeyboardLayoutEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDCEB1CDD2224008D6100 /* KeyboardLayoutEngineUITests.swift */; };
 		B2FBDD001CDD2292008D6100 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDCFF1CDD2292008D6100 /* KeyboardViewController.swift */; };
-		B2FBDD041CDD2292008D6100 /* Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2FBDCFD1CDD2292008D6100 /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B2FBDD041CDD2292008D6100 /* Keyboard Plugin.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2FBDCFD1CDD2292008D6100 /* Keyboard Plugin.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B2FBDD0B1CDD22B8008D6100 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDD0A1CDD22B8008D6100 /* KeyboardLayout.swift */; };
 		B2FBDD0D1CDD22C3008D6100 /* KeyboardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDD0C1CDD22C3008D6100 /* KeyboardRow.swift */; };
 		B2FBDD0F1CDD22CC008D6100 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDD0E1CDD22CC008D6100 /* KeyboardButton.swift */; };
@@ -62,7 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B2FBDD041CDD2292008D6100 /* Keyboard.appex in Embed App Extensions */,
+				B2FBDD041CDD2292008D6100 /* Keyboard Plugin.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +96,7 @@
 		B2FBDCE71CDD2224008D6100 /* KeyboardLayoutEngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardLayoutEngineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FBDCEB1CDD2224008D6100 /* KeyboardLayoutEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutEngineUITests.swift; sourceTree = "<group>"; };
 		B2FBDCED1CDD2224008D6100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2FBDCFD1CDD2292008D6100 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FBDCFD1CDD2292008D6100 /* Keyboard Plugin.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Keyboard Plugin.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FBDCFF1CDD2292008D6100 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		B2FBDD011CDD2292008D6100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FBDD0A1CDD22B8008D6100 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				B2FBDCC81CDD2224008D6100 /* KeyboardLayoutEngine.app */,
 				B2FBDCDC1CDD2224008D6100 /* KeyboardLayoutEngineTests.xctest */,
 				B2FBDCE71CDD2224008D6100 /* KeyboardLayoutEngineUITests.xctest */,
-				B2FBDCFD1CDD2292008D6100 /* Keyboard.appex */,
+				B2FBDCFD1CDD2292008D6100 /* Keyboard Plugin.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,7 +351,7 @@
 			);
 			name = Keyboard;
 			productName = Keyboard;
-			productReference = B2FBDCFD1CDD2292008D6100 /* Keyboard.appex */;
+			productReference = B2FBDCFD1CDD2292008D6100 /* Keyboard Plugin.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -385,6 +385,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -780,6 +781,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.prototapp.KeyboardLayoutEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -794,6 +796,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.prototapp.KeyboardLayoutEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -852,11 +855,12 @@
 			baseConfigurationReference = 1A703E494B5253AB13CA7294 /* Pods-Keyboard.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.prototapp.KeyboardLayoutEngine.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Keyboard Plugin";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -865,11 +869,12 @@
 			baseConfigurationReference = C45C1A2FFE11C55DDFB7314C /* Pods-Keyboard.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.prototapp.KeyboardLayoutEngine.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Keyboard Plugin";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
